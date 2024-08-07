@@ -1,7 +1,16 @@
+import configparser
 from openai import OpenAI
 
-# Point to the local server
-client = OpenAI(base_url="http://localhost:1234/v1", api_key="lm-studio")
+# Read the config file
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+# Get the OpenAI settings
+base_url = config['OpenAI']['base_url']
+api_key = config['OpenAI']['api_key']
+
+# Create the OpenAI client
+client = OpenAI(base_url=base_url, api_key=api_key)
 
 history = [
     {"role": "system", "content": "You are a helpful, smart, kind, and efficient AI assistant. You always fulfill the user's requests to the best of your ability."},
