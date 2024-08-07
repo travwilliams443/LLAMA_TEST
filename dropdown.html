@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Accordion Effect</title>
+	<style>
+		.product {
+			margin-bottom: 20px;
+		}
+
+		.ingredients {
+			display: none;
+			padding: 10px;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			transition: opacity 0.3s, max-height 0.3s;
+		}
+
+		.ingredients.visible {
+			display: block;
+			opacity: 1;
+			max-height: 200px; /* adjust this value */
+		}
+	</style>
+</head>
+<body>
+
+<div class="product">
+	<h2>Calm</h2>
+	<button class="view-ingredients">View Ingredients</button>
+	<ul class="ingredients">
+		<li>Ingredient 1</li>
+		<li>Ingredient 2</li>
+		<li>Ingredient 3</li>
+	</ul>
+</div>
+
+<div class="product">
+	<h2>Focus</h2>
+	<button class="view-ingredients">View Ingredients</button>
+	<ul class="ingredients">
+		<li>Ingredient 4</li>
+		<li>Ingredient 5</li>
+		<li>Ingredient 6</li>
+	</ul>
+</div>
+
+<div class="product">
+	<h2>Inspire</h2>
+	<button class="view-ingredients">View Ingredients</button>
+	<ul class="ingredients">
+		<li>Ingredient 7</li>
+		<li>Ingredient 8</li>
+		<li>Ingredient 9</li>
+	</ul>
+</div>
+
+<div class="product">
+	<h2>Rejuvenate</h2>
+	<button class="view-ingredients">View Ingredients</button>
+	<ul class="ingredients">
+		<li>Ingredient 10</li>
+		<li>Ingredient 11</li>
+		<li>Ingredient 12</li>
+	</ul>
+</div>
+
+<script>
+	const viewButtons = document.querySelectorAll('.view-ingredients');
+
+	viewButtons.forEach((button) => {
+		button.addEventListener('click', () => {
+			const ingredientsList = button.nextElementSibling;
+			ingredientsList.classList.toggle('visible');
+		});
+	});
+</script>
+
+</body>
+</html>
