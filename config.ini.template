@@ -1,0 +1,3 @@
+[OpenAI]
+base_url = your_base_url_here
+api_key = your_api_key_here
